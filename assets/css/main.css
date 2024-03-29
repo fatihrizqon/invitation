@@ -7034,7 +7034,7 @@ progress {
   font-style: normal;
 }
 
-.parallax {
+.hero {
   /* The image used */
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0.1)), url("../img/hero.jpg");
   /* Set a specific height */
@@ -7050,4 +7050,8 @@ progress {
 [class^=imghvr-],
 [class*=" imghvr-"] {
   background: #212121 !important;
+}
+
+img.about-img {
+  background-color: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0.1)) !important;
 }/*# sourceMappingURL=main.css.map */
