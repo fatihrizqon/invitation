@@ -194,7 +194,7 @@ textarea {
 }
 #preloader .preloader-title {
     font-size: 20pt;
-    color: currentColor;
+    color: #daa250;
     line-height: 0.9;
     position: absolute;
     top: 41px;
@@ -207,13 +207,13 @@ textarea {
     font-family: "Playfair Display", serif;
 }
 #preloader .preloader-title small {
-    color: currentColor;
+    color: #daa250;
     line-height: 0.9;
     font-size: 12pt;
 }
 .loading-heart {
     fill: transparent;
-    stroke: #8eaeba;
+    stroke: #daa250;
     stroke-width: 11;
     position: absolute;
     top: 50%;
@@ -2599,6 +2599,7 @@ p.center {
     background-image: url(../img/gunungan.png);
     background-repeat: no-repeat;
     background-size: 60%;
+    opacity: .25;
     -webkit-transform: rotate(15deg);
     -moz-transform: rotate(15deg);
     -ms-transform: rotate(15deg);
