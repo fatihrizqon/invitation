@@ -52,7 +52,7 @@
 <body>
 
     <!-- BEGIN PRELOADER -->
-	<!-- <div id="preloader">
+    <!-- <div id="preloader">
 		<div class="loading-heart">
 			<svg viewBox="0 0 512 512" width="100">
 				<path
@@ -136,7 +136,8 @@
                         </div>
 
                         <div class="element-v2 photo-right animate-from-left animation-from-left" data-animation-direction="from-left" data-animation-delay="300">
-                            <div class="info neela-style"><span class="h-lines"></span><span class="v-lines"></span>
+                            <div class="info neela-style">
+                                <span class="h-lines"></span><span class="v-lines"></span>
                                 <div class="content">
                                     <h4 class="color">Dian Noventri Sari, S.E.</h4>
                                     <p>Putri ketiga dari Bapak Wastono dan Ibu Sri Lembah Widartinah, B.A yang beralamatkan di Bintaran Kidul MG 2/171 RT 11/RW 03, Kelurahan Wirogunan, Kecamatan Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta.</p>
@@ -159,33 +160,49 @@
         <!-- END ABOUT US SECTION -->
 
         <!-- BEGIN THE WEDDING SECTION -->
-        <section id="the-wedding" class="parallax-background bg-color-overlay padding-divider-top section-divider-bottom-1">
+        <section id="the-wedding" class="parallax-background bg-color-overlay padding-divider-top section-divider-bottom-1 min-vh-100 d-flex align-items-center">
             <div class="section-divider-top-1 off-section"></div>
-            <!-- The class "section-divider-top-1" can also be applied to the tag <section>. In this case, it was added on a new <div> because the tag <section> have all pseudo elements (::after and ::before) in use. -->
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12">
-                        <h1 class="section-title light">Invitation</h1>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 center">
-                        <div class="invite neela-style" data-animation-direction="from-left" data-animation-delay="100">
-                            <div class="invite_title">
-                                <div class="text">
-                                    Save<small>the</small>Date
+                    <div class="col-sm-6">
+                        <div class="card-v2 animate-from-bottom animation-from-bottom" data-animation-direction="from-bottom" data-animation-delay="300">
+                            <div class="info neela-style">
+                                <span class="h-lines"></span><span class="v-lines"></span>
+                                <div class="content">
+                                    <h1 class="great-vibes-regular">Akad</h1>
+                                    <span class="text-white fs-6">
+                                        <p>
+                                            Pukul: 15:30 s.d 17:30 WIB
+                                        </p>
+                                        <p>
+                                            Museum Monumen Pangeran Diponegoro Sasana Wiratama
+                                        </p>
+                                        <p>
+                                            Jl. HOS Cokroaminoto TR-III/430, Tegalrejo, Kec, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta
+                                        </p>
+                                    </span>
                                 </div>
                             </div>
-
-                            <div class="invite_info">
-                                <h2>Novent <small>&</small> Fatih</h2>
-
-                                <div class="uppercase">Request the honor of your presence on their wedding day</div>
-                                <div class="date">September 24, 2022<small>at 03:00 pm</small></div>
-                                <div class="uppercase">At Birchwood Church<br>4181 Birchwood Ave Seal Beach, CA</div>
-
-                                <h5>Reception to follow</h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card-v2 animate-from-bottom animation-from-bottom" data-animation-direction="from-bottom" data-animation-delay="300">
+                            <div class="info neela-style">
+                                <span class="h-lines"></span><span class="v-lines"></span>
+                                <div class="content">
+                                    <h1 class="great-vibes-regular">Resepsi</h1>
+                                    <span class="text-white fs-6">
+                                        <p>
+                                            Pukul: 19:00 s.d 21:00 WIB
+                                        </p>
+                                        <p>
+                                            Museum Monumen Pangeran Diponegoro Sasana Wiratama
+                                        </p>
+                                        <p>
+                                            Jl. HOS Cokroaminoto TR-III/430, Tegalrejo, Kec, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta
+                                        </p>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -859,6 +876,37 @@
 
     <!-- Nicescroll script to handle gallery section touch swipe -->
     <script src="./assets/js/jquery.nicescroll.js"></script>
+
+    <script>
+        /* URL in address bar: 
+           http://localhost/test/js-url-parameters/#/str1/str2/str3/
+        */
+
+        var docURL = window.location.href,
+            params = [];
+
+        // filter out the website origin "example.github.io" in the OP example      
+        docURL = docURL.replace(window.location.origin, '');
+
+        // if /#/ found then we have URL parameters
+        // grabbing the parameters part of the URL
+        if (docURL.indexOf('/#/') > -1) {
+            docURL = docURL.split('/#/')[1];
+            if (docURL != '') {
+
+                // omit the last forward slash if exist
+                if (docURL[docURL.length - 1] == '/') {
+                    docURL = docURL.substring(0, docURL.length - 1);
+                }
+
+                // split the URL final string o get an object with all params 
+                params = docURL.split('/');
+                console.log(params);
+            }
+        } else {
+            console.log('No URL parameters found');
+        }
+    </script>
 </body>
 
 </html>

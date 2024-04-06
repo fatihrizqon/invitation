@@ -3247,6 +3247,7 @@ p.center {
     position: relative;
     margin-bottom: 30px;
     padding: 0 30px 30px;
+    background-color: transparent;
 }
 .wedding-details::after {
     content: "";
@@ -3255,7 +3256,7 @@ p.center {
     bottom: 20%;
     height: 60%;
     width: 1px;
-    background: #e3e3e3;
+    /* background: #e3e3e3; */
 }
 .wedding-details > i {
     color: #daa250; /* general color */
@@ -3277,11 +3278,11 @@ p.center {
     display: none;
 }
 .wedding-details.light {
-    color: #fff;
+    color: #daa250;
 }
 .wedding-details.light h4,
 .wedding-details.light i {
-    color: #fff;
+    color: #daa250;
 }
 #map_canvas_full {
     width: 100%;
@@ -6214,4 +6215,88 @@ textarea.form-control {
     .background-video {
         position: absolute;
     }
+}
+
+
+.card-v2 {
+    position: relative;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}   
+.card-v2 .info {
+    --offset: 12px;
+    --border-size: 1px;
+    position: relative;
+    width: 60%;
+    height: 100%;
+    border: 35px solid transparent;
+    border-left-width: 42px;
+    border-right-width: 42px;
+    text-align: center;
+    z-index: 1;
+    display: table-cell;
+    float: none;
+    vertical-align: top;
+    /* background-color: rgba(255, 255, 255, 0.85);
+    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    -webkit-transform: translate(-30px, 30px);
+    -moz-transform: translate(-30px, 30px);
+    -ms-transform: translate(-30px, 30px);
+    -o-transform: translate(-30px, 30px);
+    transform: translate(-30px, 30px); */
+}
+.card-v2 .info .h-lines {
+    border-top-color: #daa250; /* general color */
+    border-bottom-color: #daa250; /* general color */
+    -khtml-opacity: .75;
+    -moz-opacity: .75;
+    opacity: .75;
+}
+.card-v2 .info .v-lines {
+    border-left-color: #daa250; /* general color */
+    border-right-color: #daa250; /* general color */
+    -khtml-opacity: .75;
+    -moz-opacity: .75;
+    opacity: .75;
+}
+.card-v2 .info .content {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+.card-v2 .info .content p {
+    margin-bottom: 0;
+}
+.card-v2 .info .sn-icons {
+    float: none;
+    position: relative;
+    margin: 30px 0 10px;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+.card-v2 .info .sn-icons a {
+    color: #fff; /* general color */
+}
+.card-v2 .info h3 {
+    margin-top: 12px;
+    margin-bottom: 18px;
+    position: relative;
+    font-family: "Playfair Display", serif;
+}
+.card-v2 .info h3 small {
+    display: block;
+    font-size: 14pt;
+    font-family: Poppins, sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-style: italic;
+}
+.card-v2 .info p {
+    width: 100%;
 }
