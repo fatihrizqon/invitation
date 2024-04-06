@@ -8,9 +8,9 @@
 
 .hero {
   /* The image used */
-  background-image: url("../img/hero.jpg");
+  background-image: url("../img/hero.webp");
   /* Set a specific height */
-  height: 100vh;
+  /* height: 100vh; */
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
