@@ -343,10 +343,15 @@
                             </div>
                         </div>
 
+                        <div class="col-12">
+                            <a href="https://calendar.app.google/3zxMKU5BAdXJ9fZw9" class="btn btn-primary text-white"
+                                target="_blank">Save the Date!</a>
+                        </div>
+
                         <div class="col-12 d-none">
-                            <audio controls autoplay>
+                            <audio id="myAudio" loop controls autoplay>
                                 <source src="./assets/audio/ringtone.mp3" type="audio/mpeg">
-                                Your browser does not support the audio element.
+                                Your browser does not support the audio element. 
                             </audio>
                         </div>
                     </div>
@@ -399,6 +404,7 @@
             document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
         }
 
+        document.getElementById("myAudio").volume = 0.25;
     </script>
 </body>
 
