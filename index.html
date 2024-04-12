@@ -387,9 +387,9 @@
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const to = urlParams.get('to');
-        
+
         if(to != null){
-            document.getElementById("to").innerHTML=`Mr/Ms/Mrs (${to})`;
+            document.getElementById("to").innerHTML=`Mr./Ms./Mrs. ${to}`;
         }
 
     </script>
