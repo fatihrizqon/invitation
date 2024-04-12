@@ -324,7 +324,7 @@
                         <div class="col-md-4">
                             <div class="footer-info left">
                                 Saturday, 20 April 2024 (3:00 pm - 9:00 pm)<br>
-                                Museum Monumen Pangeran Diponegoro Sasana Wiratama
+                                Monumen Pangeran Diponegoro (Museum Sasana Wiratama)
                             </div>
                         </div>
 
@@ -348,9 +348,9 @@
                         </div>
 
                         <div class="col-12 d-none">
-                            <audio id="myAudio" loop controls autoplay>
+                            <audio id="backsound" loop controls autoplay>
                                 <source src="./assets/audio/ringtone.mp3" type="audio/mpeg">
-                                Your browser does not support the audio element. 
+                                Your browser does not support the audio element.
                             </audio>
                         </div>
                     </div>
@@ -403,7 +403,10 @@
             document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
         }
 
-        document.getElementById("myAudio").volume = 0.25;
+        window.onload = function () {
+            var backgroundAudio = document.getElementById("backsound");
+            backgroundAudio.volume = 0.25;
+        }
     </script>
 </body>
 
