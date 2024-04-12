@@ -146,7 +146,7 @@
                                 among yourselves so that you may find comfort in them. And He has placed between you
                                 compassion and mercy. Surely in this are signs for people who reflect" - QS. Ar-Rum (21)
                             </h6>
-                            <p>With great joy and pleasure, we are requesting the honor of your presence <span id="to"></span> at the wedding
+                            <p>With great joy and pleasure, we are requesting the honor of your presence <span id="to" class="fw-bold"></span> at the wedding
                                 of:</p>
                         </div>
 
@@ -386,8 +386,12 @@
 
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        const to = urlParams.get('to')
-        document.getElementById("to").innerHTML=`(${to})`;
+        const to = urlParams.get('to');
+        
+        if(to != null){
+            document.getElementById("to").innerHTML=`Mr/Ms/Mrs (${to})`;
+        }
+
     </script>
 </body>
 
