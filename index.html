@@ -92,7 +92,6 @@
 
         <!-- BEGIN HEADER -->
         <header id="header">
-            <!-- CUTTED -->
         </header>
         <!-- END HEADER -->
 
@@ -146,7 +145,8 @@
                                 among yourselves so that you may find comfort in them. And He has placed between you
                                 compassion and mercy. Surely in this are signs for people who reflect" - QS. Ar-Rum (21)
                             </h6>
-                            <p>With great joy and pleasure, we are requesting the honor of your presence <span id="to" class="fw-bold"></span> at the wedding
+                            <p>With great joy and pleasure, we are requesting the honor of your presence <span id="to"
+                                    class="fw-bold"></span> at the wedding
                                 of:</p>
                         </div>
 
@@ -342,6 +342,13 @@
 
                             </div>
                         </div>
+
+                        <div class="col-12 d-none">
+                            <audio controls autoplay>
+                                <source src="./assets/audio/ringtone.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -388,8 +395,8 @@
         const urlParams = new URLSearchParams(queryString);
         const to = urlParams.get('to');
 
-        if(to != null){
-            document.getElementById("to").innerHTML=`Mr./Ms./Mrs. ${to}`;
+        if (to != null) {
+            document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
         }
 
     </script>
