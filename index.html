@@ -112,7 +112,8 @@
                         <h1 class="great-vibes-regular d-grid">
                             <span class="text-white " style="font-size:6rem;" data-aos-duration="1500"
                                 data-aos="fade-right">Novent</span>
-                            <small class="text-white" data-aos-duration="1500" data-aos="fade-zoom-in">&</small>
+                            <small class="text-white" data-aos-duration="1500" data-aos="fade-zoom-in"
+                                onclick="startMusic()">&</small>
                             <span class="text-white " style="font-size:6rem;" data-aos-duration="1500"
                                 data-aos="fade-left">Fatih</span>
                         </h1>
@@ -350,7 +351,7 @@
             </div>
 
             <div class="d-flex w-100">
-                <audio class="w-100" controls autoplay loop>
+                <audio class="w-100" controls>
                     <source src="./assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3">
                 </audio>
             </div>
@@ -401,21 +402,21 @@
             document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
         }
 
-        $('window').on('touchmove', function (event) {
-            event.preventDefault();
-            var distanceY = window.pageYOffset
-            if (distanceY > 0) {
-                var promise = document.querySelector('audio').play();
-                if (typeof promise !== 'undefined') {
-                    promise.then(function () {
-                        // auto-play started!
-                        console.log('audio started...');
-                    }).catch(function (error) {
-                        // auto-play failed
-                        console.log(error);
-                    });
-                }
+        startMusic = () => {
+            var promise = document.querySelector('audio').play();
+            if (typeof promise !== 'undefined') {
+                promise.then(function () {
+                    // auto-play started!
+                    console.log('audio started...');
+                }).catch(function (error) {
+                    // auto-play failed
+                    console.log(error);
+                });
             }
+        }
+
+        $(document).ready(function () {
+            startMusic();
         });
     </script>
 
