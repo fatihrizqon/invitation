@@ -350,13 +350,7 @@
             </div>
 
             <div class="d-none w-100">
-                <!-- <audio class="w-100" id="myAudio" loop controls autoplay="true">
-                    <source src="./assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3"
-                        type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio> -->
 
-                <!-- <iframe src="./assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3" allow="autoplay" id="audio"></iframe> -->
             </div>
         </footer>
         <!-- END FOOTER -->
@@ -404,33 +398,18 @@
         if (to != null) {
             document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
         }
+    </script>
 
-        // window.onload = function () {
-        //     var myaudio = document.getElementById("myAudio").autoplay = true;
-        //     var backgroundAudio = document.getElementById("myAudio");
-        //     backgroundAudio.volume = 0.25;
-        // }
-
-        window.addEventListener('load', function () {
-            var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            var source = audioCtx.createBufferSource();
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'https://fatihrizqon.github.io/invitation/assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3');
-            xhr.responseType = 'arraybuffer';
-            xhr.addEventListener('load', function (r) {
-                audioCtx.decodeAudioData(
-                    xhr.response,
-                    function (buffer) {
-                        source.buffer = buffer;
-                        source.connect(audioCtx.destination);
-                        source.loop = false;
-                    });
-                source.start(0);
-            });
-            xhr.send();
-
-            audioCtx.resume();
+    <script src="./howlerjs/dist/howler.js"></script>
+    <script>
+        var sound = new Howl({
+            src: ['./assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3'],
+            autoplay: true,
+            loop: true,
+            volume: 0.25,
         });
+        
+        sound.play();
     </script>
 </body>
 
