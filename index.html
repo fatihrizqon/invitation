@@ -356,7 +356,7 @@
                     Your browser does not support the audio element.
                 </audio> -->
 
-                <iframe src="./assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3" allow="autoplay" id="audio"></iframe>
+                <!-- <iframe src="./assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3" allow="autoplay" id="audio"></iframe> -->
             </div>
         </footer>
         <!-- END FOOTER -->
@@ -405,11 +405,30 @@
             document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
         }
 
-        window.onload = function () {
-            var myaudio = document.getElementById("myAudio").autoplay = true;
-            var backgroundAudio = document.getElementById("myAudio");
-            backgroundAudio.volume = 0.25;
-        }
+        // window.onload = function () {
+        //     var myaudio = document.getElementById("myAudio").autoplay = true;
+        //     var backgroundAudio = document.getElementById("myAudio");
+        //     backgroundAudio.volume = 0.25;
+        // }
+
+        window.addEventListener('load', function () {
+            var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            var source = audioCtx.createBufferSource();
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', './assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3');
+            xhr.responseType = 'arraybuffer';
+            xhr.addEventListener('load', function (r) {
+                audioCtx.decodeAudioData(
+                    xhr.response,
+                    function (buffer) {
+                        source.buffer = buffer;
+                        source.connect(audioCtx.destination);
+                        source.loop = false;
+                    });
+                source.start(0);
+            });
+            xhr.send();
+        });
     </script>
 </body>
 
