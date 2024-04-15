@@ -401,10 +401,12 @@
             document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
         }
 
-        var promise = document.getElementById('bgmusic').play();
+        var promise = document.querySelector('audio').play();
+
         if (typeof promise !== 'undefined') {
             promise.then(function () {
                 // auto-play started!
+                console.log('audio started...');
             }).catch(function (error) {
                 // auto-play failed
                 console.log(error);
