@@ -404,14 +404,23 @@
     <script>
         Howler.autoUnlock = false;
 
+        let gasLooper;
         var sound = new Howl({
             src: ['https://fatihrizqon.github.io/invitation/assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3'],
-            volume: 0.25,
             onplayerror: function () {
                 sound.once('unlock', function () {
                     sound.play();
                 });
             },
+            onplay: () => {
+                gasLooper = setTimeout(() => {
+                    sound.play();
+                }, 450);
+            },
+            onstop: () => {
+                clearTimeout(gasLooper);
+            },
+            volume: 0.25,
             autoplay: true,
             loop: true,
         });
