@@ -254,7 +254,7 @@
         <!-- END THE WEDDING SECTION -->
 
         <!-- BEGIN GALLERY SECTION -->
-        <section id="gallery" class="no-padding-bottom" data-aos-duration="1500" data-aos="fade-up">
+        <section id="gallery" class="no-padding-bottom">
             <div class="container mb-3">
                 <div class="row">
                     <div class="col-sm-12 text-center">
@@ -349,7 +349,8 @@
                 </div>
             </div>
 
-            <div class="d-none w-100">
+            <div class="d-flex w-100">
+                <audio src="./assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3" autoplay loop></audio>
             </div>
         </footer>
         <!-- END FOOTER -->
@@ -397,24 +398,34 @@
         if (to != null) {
             document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
         }
+
+        var promise = document.getElementById('bgmusic').play();
+        if (typeof promise !== 'undefined') {
+            promise.then(function () {
+                // auto-play started!
+            }).catch(function (error) {
+                // auto-play failed
+                console.log(error);
+            });
+        }
     </script>
 
     <script src="./howlerjs/dist/howler.js"></script>
 
     <script>
-        Howler.autoUnlock = false;
-        var sound = new Howl({
-            src: ['https://fatihrizqon.github.io/invitation/assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3'],
-            volume: 0.25,
-            autoplay: true,
-            loop: true,
-            onplayerror: function () {
-                sound.once('unlock', function () {
-                    sound.play();
-                });
-            },
-        });
-        sound.play();
+        // Howler.autoUnlock = false;
+        // var sound = new Howl({
+        //     src: ['https://fatihrizqon.github.io/invitation/assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3'],
+        //     volume: 0.25,
+        //     autoplay: true,
+        //     loop: true,
+        //     onplayerror: function () {
+        //         sound.once('unlock', function () {
+        //             sound.play();
+        //         });
+        //     },
+        // });
+        // sound.play();
     </script>
 </body>
 
