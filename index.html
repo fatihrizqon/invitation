@@ -68,10 +68,9 @@
 </head>
 
 <body>
-
     <!-- BEGIN PRELOADER -->
-    <!-- <div id="preloader">
-		<div class="loading-heart">
+    <div id="preloader">
+		<div class="loading-heart d-grid">
 			<svg viewBox="0 0 512 512" width="100">
 				<path
 					d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
@@ -81,10 +80,10 @@
 				<small>&</small><br>
 				Fatih
 			</div>
+            <button class="btn" onclick="startMusic()">Open</button>
 		</div>
-	</div> -->
+	</div>
     <!-- END PRELOADER -->
-
 
     <!-- BEGIN WRAPPER -->
     <div id="wrapper">
@@ -350,8 +349,8 @@
                 </div>
             </div>
 
-            <div class="d-flex w-100">
-                <audio class="w-100" controls>
+            <div class="d-none w-100">
+                <audio class="w-100">
                     <source src="./assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3">
                 </audio>
             </div>
@@ -359,7 +358,6 @@
         <!-- END FOOTER -->
     </div>
     <!-- END WRAPPER -->
-
 
     <!-- Google Maps API and Map Richmarker Library -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHOXsTqoSDPQ5eC5TChvgOf3pAVGapYog"></script>
@@ -398,44 +396,23 @@
         const urlParams = new URLSearchParams(queryString);
         const to = urlParams.get('to');
 
-        if (to != null) {
-            document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
-        }
+        if (to != null) document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
 
         startMusic = () => {
-            var promise = document.querySelector('audio').play();
+            $('#preloader').addClass('d-none');
+            var audio = document.querySelector('audio');
+            var promise = audio.play();
             if (typeof promise !== 'undefined') {
                 promise.then(function () {
                     // auto-play started!
                     console.log('audio started...');
+                    audio.volume = 0.25;
                 }).catch(function (error) {
                     // auto-play failed
                     console.log(error);
                 });
             }
         }
-
-        $(document).ready(function () {
-            startMusic();
-        });
-    </script>
-
-    <script src="./howlerjs/dist/howler.js"></script>
-
-    <script>
-        // Howler.autoUnlock = false;
-        // var sound = new Howl({
-        //     src: ['https://fatihrizqon.github.io/invitation/assets/audio/turning_page_-_sleeping_at_last_-_violin_cover_by_daniel_jang.mp3'],
-        //     volume: 0.25,
-        //     autoplay: true,
-        //     loop: true,
-        //     onplayerror: function () {
-        //         sound.once('unlock', function () {
-        //             sound.play();
-        //         });
-        //     },
-        // });
-        // sound.play();
     </script>
 </body>
 
