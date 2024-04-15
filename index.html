@@ -67,22 +67,22 @@
     </script>
 </head>
 
-<body>
+<body oncontextmenu="return false">
     <!-- BEGIN PRELOADER -->
     <div id="preloader">
-		<div class="loading-heart d-grid">
-			<svg viewBox="0 0 512 512" width="100">
-				<path
-					d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
-			</svg>
-			<div class="preloader-title">
-				Novent<br>
-				<small>&</small><br>
-				Fatih
-			</div>
+        <div class="loading-heart d-grid">
+            <svg viewBox="0 0 512 512" width="100">
+                <path
+                    d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+            </svg>
+            <div class="preloader-title">
+                Novent<br>
+                <small>&</small><br>
+                Fatih
+            </div>
             <button class="btn" onclick="startMusic()">Open</button>
-		</div>
-	</div>
+        </div>
+    </div>
     <!-- END PRELOADER -->
 
     <!-- BEGIN WRAPPER -->
@@ -257,7 +257,9 @@
             <div class="container mb-3">
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <h2 class="color text-center">The Moments</h2>
+                        <h2 class="color text-center">The Moments
+
+                        </h2>
                         <img src="./assets/img/hero-bottom-divider.svg" alt="" class="my-3" width="256">
                     </div>
                 </div>
@@ -316,7 +318,7 @@
 
         <!-- BEGIN FOOTER -->
         <footer id="footer-onepage" class="bg-color">
-            <div class="footer-widget-area">
+            <div class="footer-widget-area d-grid align-items-center">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
@@ -376,43 +378,8 @@
     <script src="./assets/js/lightbox.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/owl-carousel/js/owl.carousel.min.js"></script>
-
-    <!-- Nicescroll script to handle gallery section touch swipe -->
     <script src="./assets/js/jquery.nicescroll.js"></script>
-
-    <script>
-        AOS.init();
-        $(document).ready(function () {
-            $(".owl-carousel").owlCarousel({
-                loop: true,
-                autoplay: true,
-                autoplayTimeout: 2500
-            });
-        });
-        document.documentElement.style.setProperty('--animate-duration', '2s');
-
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const to = urlParams.get('to');
-
-        if (to != null) document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
-
-        startMusic = () => {
-            $('#preloader').addClass('d-none');
-            var audio = document.querySelector('audio');
-            var promise = audio.play();
-            if (typeof promise !== 'undefined') {
-                promise.then(function () {
-                    // auto-play started!
-                    console.log('audio started...');
-                    audio.volume = 0.25;
-                }).catch(function (error) {
-                    // auto-play failed
-                    console.log(error);
-                });
-            }
-        }
-    </script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
