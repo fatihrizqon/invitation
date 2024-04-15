@@ -219,6 +219,44 @@ textarea {
     line-height: 0.9;
     font-size: 12pt;
 }
+.loading-heart::before{
+    content: "";
+    width: 337px;
+    height: 230px;
+    position: absolute;
+    top: -24px;
+    right: -256px;
+    z-index: -1;
+    background-position: center center;
+    background-image: url(../img/gunungan.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-transform: scaleX(-1) rotate(-16deg);
+    -moz-transform: scaleX(-1) rotate(-16deg);
+    -ms-transform: scaleX(-1) rotate(-16deg);
+    -o-transform: scaleX(-1) rotate(-16deg);
+    transform: scaleX(-1) rotate(-16deg);
+    opacity: .25;
+}
+.loading-heart::after{
+    content: "";
+    width: 337px;
+    height: 230px;
+    position: absolute;
+    top: -24px;
+    left: -256px;
+    z-index: -1;
+    background-position: center center;
+    background-image: url(../img/gunungan.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-transform: scaleX(-1) rotate(16deg);
+    -moz-transform: scaleX(-1) rotate(16deg);
+    -ms-transform: scaleX(-1) rotate(16deg);
+    -o-transform: scaleX(-1) rotate(16deg);
+    transform: scaleX(-1) rotate(16deg);
+    opacity: .25;
+}
 .loading-heart {
     fill: transparent;
     stroke: #daa250;
