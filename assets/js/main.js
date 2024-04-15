@@ -13,7 +13,11 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const to = urlParams.get('to');
 
-if (to != null) document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
+if (to != null) {
+    var content = `Hi! ${to}, we would like to invite you in our wedding party.`
+    document.getElementById("to").innerHTML = `Mr./Ms./Mrs. ${to}`;
+    document.querySelector('meta[name="description"]').setAttribute("content", content);
+}
 
 startMusic = () => {
     $('#preloader').addClass('d-none');
